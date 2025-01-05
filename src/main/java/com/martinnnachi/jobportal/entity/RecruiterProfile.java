@@ -6,10 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "recruiter_profile")
 @Getter
 @Setter
+@Entity
+@Table(name = "recruiter_profile")
 @NoArgsConstructor
 @AllArgsConstructor
 public class RecruiterProfile {
@@ -40,6 +40,13 @@ public class RecruiterProfile {
     public RecruiterProfile(Users users) {
         this.userId = users;
     }
+
+    @Transient
+    public String getPhotosImagePath() {
+        if (profilePhoto == null) return null;
+        return "/photos/recruiter/" + userAccountId + "/" + profilePhoto;
+    }
+
 
     @Override
     public String toString() {
