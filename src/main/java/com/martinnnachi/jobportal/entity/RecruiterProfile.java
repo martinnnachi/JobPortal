@@ -32,6 +32,8 @@ public class RecruiterProfile {
 
     private String country;
 
+    private String company;
+
     @Column(nullable = true, length = 64)
     private String profilePhoto;
 
@@ -49,6 +51,7 @@ public class RecruiterProfile {
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", country='" + country + '\'' +
+                ", company='" + company + '\'' +
                 ", profilePhoto='" + profilePhoto + '\'' +
                 '}';
     }
