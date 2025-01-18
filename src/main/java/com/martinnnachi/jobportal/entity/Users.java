@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -47,6 +48,17 @@ public class Users {
                 ", registrationDate=" + registrationDate +
                 ", userTypeId=" + userTypeId +
                 '}';
+    }
+
+    @OneToMany(mappedBy = "postedById")
+    private Collection<JobPostActivity> jobPostActivity;
+
+    public Collection<JobPostActivity> getJobPostActivity() {
+        return jobPostActivity;
+    }
+
+    public void setJobPostActivity(Collection<JobPostActivity> jobPostActivity) {
+        this.jobPostActivity = jobPostActivity;
     }
 }
 
