@@ -119,7 +119,7 @@ public class JobSeekerProfileController {
         }
 
 
-        return "redirect:/dashboard";
+        return "redirect:/dashboard/";
 
     }
 }
